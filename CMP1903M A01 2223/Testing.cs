@@ -6,7 +6,7 @@ namespace CMP1903M_A01_2223{
     class Testing {
         
         /*runTest is a method that lets us try out several functions of the Pack and Card class.*/
-        public static void runTest() {
+        public static void MethodTests() {
 
 
             /*We create a new pack of cards to perform our operations on*/
@@ -50,8 +50,20 @@ namespace CMP1903M_A01_2223{
             Card card1 = Pack.deal(tHand);
 
             /* The Return value of Pack.deal is Null when it's empty.*/
+            Console.WriteLine("Dealing a card... ");
             if (card1 != null) { 
                 Console.WriteLine("Dealt a(n) " + card1.Name + " [" + card1.Value + "|" + card1.Suit +"]");
+            }else{
+                Console.WriteLine("No cards left to be dealt");
+            }
+
+            /* We deal another card to the same hand*/
+            Console.WriteLine("\nDeal another card:");
+            card1 = Pack.deal(tHand);
+
+            Console.WriteLine("Dealing another card... ");
+            if (card1 != null){
+                Console.WriteLine("Dealt a(n) " + card1.Name + " [" + card1.Value + "|" + card1.Suit + "]");
             }else{
                 Console.WriteLine("No cards left to be dealt");
             }

@@ -22,7 +22,8 @@ namespace CMP1903M_A01_2223{
 			
 			get { return _typecode; }
 			set {
-				if (value > 0 && value< 3){ /*Checks that the value is within the predicted parameters*/
+				/*Checks that the value is within the predicted parameters*/
+				if (value > 0 && value< 3){ 
 
 					_typecode = value;
 				}
@@ -34,7 +35,8 @@ namespace CMP1903M_A01_2223{
 			get { return _max; }
 			set
 			{
-				if (value < 1){ /*Checks that the value is within the predicted parameters*/
+				/*Checks that the value is within the predicted parameters*/
+				if (value < 1){ 
 
 					_max = 1;
 
@@ -72,6 +74,7 @@ namespace CMP1903M_A01_2223{
 
 			} else{
 				Console.WriteLine("\n\nThe Hand is Empty");
+
 
 			}
 			
