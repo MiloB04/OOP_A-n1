@@ -8,9 +8,6 @@ namespace CMP1903M_A01_2223{
         /*runTest is a method that lets us try out several functions of the Pack and Card class.*/
         public static void MethodTests() {
 
-
-            /*We create a new pack of cards to perform our operations on*/
-            Pack Pack = new Pack();
             /*We create two hands one for texas hold em poker 
              *and one for regular poker (Five card draw poker)          */
             myHand tHand = new myHand(1);
@@ -21,7 +18,7 @@ namespace CMP1903M_A01_2223{
               We call the shuffle function and give it 1 as the input to select the 
               appropriate shuffle for the situation                                */
             Console.WriteLine("\nFischer-Yates Shuffle: ");
-            Pack.shuffleCardPack(1);
+            Pack.ShuffleCardPack(1);
             
             int c = 0;
             /*We then print to the screen the value of each card in the pack to 
@@ -34,7 +31,7 @@ namespace CMP1903M_A01_2223{
 
             /*We do the same in the case of the riffle shuffle just like the Fischer Yates Shuffle*/
             Console.WriteLine("\nRiffle Shuffle: ");
-            Pack.shuffleCardPack(2);
+            Pack.ShuffleCardPack(2);
             
             c = 0;
             /*We demostrate the shuffle just like before.*/
@@ -47,7 +44,7 @@ namespace CMP1903M_A01_2223{
             /*We then show the Deal functions */
             /*Method that deals only one card*/
             Console.WriteLine("\nDeal one card:");
-            Card card1 = Pack.deal(tHand);
+            Card card1 = Pack.Deal(tHand);
 
             /* The Return value of Pack.deal is Null when it's empty.*/
             Console.WriteLine("Dealing a card... ");
@@ -59,7 +56,7 @@ namespace CMP1903M_A01_2223{
 
             /* We deal another card to the same hand*/
             Console.WriteLine("\nDeal another card:");
-            card1 = Pack.deal(tHand);
+            card1 = Pack.Deal(tHand);
 
             Console.WriteLine("Dealing another card... ");
             if (card1 != null){
@@ -70,7 +67,7 @@ namespace CMP1903M_A01_2223{
 
 
             /* We show how some of the methods in the class Pack.cs function more specifically .dealCard*/
-            List<Card> cards = Pack.dealCard(5, fHand);
+            List<Card> cards = Pack.DealCard(5, fHand);
             Console.WriteLine("\nDealing 5 Cards using dealCard method...");
 
             foreach (Card card2 in cards){
@@ -100,6 +97,7 @@ namespace CMP1903M_A01_2223{
                     /*Each card is added as they're created using the two counters*/
                     card4.Value = j;
                     card4.Suit = i;
+                    card4.Name = card4.ChangeName();
                     Pack.pack.Add(card4);
 
                     Console.WriteLine("Added a(n) " + card4.Name + " [" + card4.Value + "|" + card4.Suit + "]");

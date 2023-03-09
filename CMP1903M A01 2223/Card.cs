@@ -33,8 +33,365 @@ class Card{
     public string Name {
     
         get { return _name; }
-        set {}
+        set { _name = ChangeName();    }
     
+    }
+
+    public string ChangeName(){
+
+        string cardname;
+
+        switch (_value){     
+              /* Through the use of nested switch cases we assign a name that can be used as an output 
+               * for each card. The first switch divides them by values and the nested switch divides 
+               * Them by suit.                                                                        */
+
+            case 1:     /* Aces */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Ace of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Ace of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Ace of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Ace of Diamonds";
+                        break;
+
+                    default: /*In case the value falls outside of the valid parameters it's set to the 
+                                              * default and we add ! at the start and end of the string to signal it */
+                        cardname = "!Ace of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 2:     /* Twos */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Two of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Two of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Two of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Two of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Two of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 3:     /* Three */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Three of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Three of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Three of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Three of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Three of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 4:     /* Fours */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Four of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Four of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Four of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Four of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Four of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 5:     /* Fives */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Five of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Five of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Five of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Five of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Five of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 6:     /* Sixes */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Six of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Six of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Six of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Six of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Six of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 7:     /* Sevens */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Seven of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Seven of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Seven of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Seven of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Seven of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 8:     /* Eights */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Eight of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Eight of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Eight of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Eight of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Eight of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 9:     /* Nines */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Nine of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Nine of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Nine of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Nine of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Nine of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 10:    /* Tens */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Ten of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Ten of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Ten of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Ten of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Ten of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 11:    /* Jacks */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Jack of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Jack of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Jack of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Jack of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Jack of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 12:    /* Queens */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "Queen of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "Queen of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "Queen of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "Queen of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!Queen of Spades!";
+                        break;
+                }
+
+                break;
+
+            case 13:  /* Kings */
+                switch (_suit)
+                {
+                    case 1:
+                        cardname = "King of Spades";
+                        break;
+
+                    case 2:
+                        cardname = "King of Clubs";
+                        break;
+
+                    case 3:
+                        cardname = "King of Hearts";
+                        break;
+
+                    case 4:
+                        cardname = "King of Diamonds";
+                        break;
+
+                    default:
+                        cardname = "!King of Spades!";
+                        break;
+                }
+
+                break;
+
+            default: /*Here to mark an error in the value of the number of the card we mark it with two ! instead of one*/
+                cardname = "!!Ace of Spades!!";
+
+                break;
+        }
+
+        return cardname;
     }
     
 
@@ -49,347 +406,14 @@ class Card{
             _value = 1; 
         }
 
-        if (value > 0 && value < 5) { 
+        if (suit > 0 && suit < 5) { 
            _suit = suit;
         } else {                        
            _suit = 1; 
         }
 
-        switch (value){     /* Through the use of nested switch cases we assign a name that can be used as an output 
-                             * for each card. The first switch divides them by values and the nested switch divides 
-                             * Them by suit.                                                                        */
-
-                case 1:     /* Aces */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Ace of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Ace of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Ace of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Ace of Diamonds";
-                                    break;
-
-                                    default: /*In case the value falls outside of the valid parameters it's set to the 
-                                              * default and we add ! at the start and end of the string to signal it */
-                                        _name = "!Ace of Spades!";
-                                    break;
-                                }
-                    
-                break;
-
-                case 2:     /* Twos */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Two of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Two of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Two of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Two of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Two of Spades!";
-                                    break;
-                                }
-                   
-                break;
-
-                case 3:     /* Three */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Three of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Three of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Three of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Three of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Three of Spades!";
-                                    break;
-                                }
-                    
-                break;
-
-                case 4:     /* Fours */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Four of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Four of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Four of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Four of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Four of Spades!";
-                                    break;
-                                }
-                    
-                break;
-
-                case 5:     /* Fives */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Five of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Five of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Five of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Five of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Five of Spades!";
-                                    break;
-                                }
-                    
-                break;
-                
-                case 6:     /* Sixes */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Six of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Six of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Six of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Six of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Six of Spades!";
-                                    break;
-                                }
-                   
-                break;
-
-                case 7:     /* Sevens */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Seven of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Seven of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Seven of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Seven of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Seven of Spades!";
-                                    break;
-                                }
-                    
-                break;
-
-                case 8:     /* Eights */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Eight of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Eight of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Eight of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Eight of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Eight of Spades!";
-                                    break;
-                                }
-                    
-                break;
-
-                case 9:     /* Nines */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Nine of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Nine of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Nine of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Nine of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Nine of Spades!";
-                                    break;
-                                }
-                    
-                break;
-
-                case 10:    /* Tens */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Ten of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Ten of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Ten of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Ten of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Ten of Spades!";
-                                    break;
-                                }
-                    
-                break;
-
-                case 11:    /* Jacks */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Jack of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Jack of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Jack of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Jack of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Jack of Spades!";
-                                    break;
-                                }
-                    
-                break;
-
-                case 12:    /* Queens */
-                                switch (suit){
-                                    case 1:
-                                        _name = "Queen of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "Queen of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "Queen of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "Queen of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!Queen of Spades!";
-                                    break;
-                                }
-                    
-                break;
-
-                case 13:  /* Kings */
-                                switch (suit){
-                                    case 1:
-                                        _name = "King of Spades";
-                                    break;
-
-                                    case 2:
-                                        _name = "King of Clubs";
-                                    break;
-
-                                    case 3:
-                                        _name = "King of Hearts";
-                                    break;
-
-                                    case 4:
-                                        _name = "King of Diamonds";
-                                    break;
-
-                                    default:
-                                        _name = "!King of Spades!";
-                                    break;
-                                }
-                  
-                break;
-
-                default: /*Here to mark an error in the value of the number of the card we mark it with two ! instead of one*/
-                    _name = "!!Ace of Spades!!";
-                    
-                break;
-            }
+        _name = ChangeName();
+        
 
     }
 

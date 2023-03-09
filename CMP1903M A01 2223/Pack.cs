@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace CMP1903M_A01_2223
 {
     class Pack{
+
         public static List<Card> pack = new List<Card>();
 
         static Pack(){
@@ -25,13 +26,13 @@ namespace CMP1903M_A01_2223
 
 
 
-        public static bool shuffleCardPack(int typeOfShuffle)
+        public static bool ShuffleCardPack(int typeOfShuffle)
         {
 
             /*We check that there are at least more than one card 
              * in the deck so that it can be shuffled if it isn't 
              * it defaults the switch case to No Shuffle.       */
-            if (pack.Count >= 2) { typeOfShuffle = 0; }
+            if (pack.Count < 2) { typeOfShuffle = 0; }
 
             /*Variable that keeps track of the pack's size*/
             int n = pack.Count;
@@ -73,57 +74,62 @@ namespace CMP1903M_A01_2223
                     /*Variable that keeps track of the size of the deck*/
                     n = pack.Count;
 
+                    /*We then locate the center of the deck so that we can split it as evenly as possible*/
+                    int mid;
+                    if((n%2) == 0){          /*Checks if the total is even or not for operation purposes.*/
+                        mid = n / 2;        //if it isn't, we just take the normal half
+                    }else{                                      /*Necessary for cases in which it is odd.*/
+                        mid = (n - 1) / 2;  //If it is odd, we take the half rounded down. (I.E. the lower middle point
+                    }
+
                     /*Here we divide the pack of cards into two new packs "PackOne" 
                      * And "PackTwo" that will be fused together later             */
                     List<Card> PackOne = new List<Card>();
                     List<Card> PackTwo = new List<Card>();
 
 
-                    /*We assign PackOne the First half of the deck*/
-                    for (int i = 0; i < n / 2; i++){
-                        /*Adds in the first half*/
-                        PackOne.Add(pack[i]);
-                        /*Checks if the total is even or not for operation purposes.*/
-                        if (n % 2 == 0){      /*if even the operation keeps going as normal*/
+                    int index = 0;
+                    /*Here we distribute the cards evenly in two lists*/
+                    foreach(Card cards in pack){
 
-                            /*Takes value from the first half*/
-                            PackTwo.Add(pack[i + (n / 2)]);
-
+                        /*We assign PackOne the First half of the deck*/
+                        if (index<=mid){      /*Adds in the first half*/
+                            PackOne.Add(cards); 
+                        }else{                /*Adds in the second half*/
+                            PackTwo.Add(cards);
                         }
-                        else{               /*if uneven we take the higher middle value as the half*/
 
-                            if (i != ((n - 1) / 2)){/*Clause to prevent going over the pack's size, we take 
-                                                  * the lower middle value and if we reach that it means 
-                                                  * we're at the end of the for loop so there are no more
-                                                  * cards in the second half to add                      */
+                        index++;
+                        
+                    }
 
-                                /* Takes value from the second half 
-                                 * (by adding half of the length to the i as an offset)*/
-                                PackTwo.Add(pack[i + ((n + 1) / 2)]);
+                    /*Finally we clear the deck to then add the 
+                     * cards back in their new order           */
+                    pack.Clear();
 
-                            }
-                        }
-                        /*Now in preparation to reintroduce the cards 
-                         * back into the new order we clear the deck.*/
-                        pack.Clear();
+                    /*To make sure we don't call a card outside of the pack's range we 
+                     * implement an index for both of the decks during this operation. */
+                    int indexEven = 0;
+                    int indexOdd = 0;
+                    /*We go through the entire deck and we add each card in*/
+                    for (int i = 0; i<=mid; i++) {
+                        /*To replicate the way one would do a riffle shuffle we
+                         * add a card from the first pack when the number is odd */
+                        if (i%2 == 0) { 
 
-                        /*We now reassemble the deck from the two halves we've created.*/
-                        for (int j = 0; j < (n / 2); j++){
+                            if (indexEven < PackOne.Count) { pack.Add(PackOne[indexEven]); }
+                            indexEven++;
 
-                            pack.Add(PackOne[j]);
+                        /*... and one from the other when the index is Odd.*/
+                        }else{ 
 
-                            /*We need the same clause as before to avoid going 
-                             * outside the range of the second half's deck     */
-                            if (n % 2 == 0){
-                                pack.Add(PackTwo[j]);
-                            }else{
-                                if (j != ((n - 1) / 2)){
-                                    pack.Add(PackTwo[j]);
-                                }
-                            }
+                            if (indexOdd < PackOne.Count)  { pack.Add(PackTwo[indexOdd]); }
+                            indexOdd++;
+
                         }
                     }
-                break;
+
+                    break;
 
                 default:
                     /*No shuffle.*/
@@ -134,9 +140,10 @@ namespace CMP1903M_A01_2223
 
         }
 
+
         /*Through the use of this method we remove a card 
          * from the deck and add it to a player's hand. */
-        public static Card deal(myHand Hand) {
+        public static Card Deal(myHand Hand) {
                 
                 
                 if (pack.Count > 0) { /*First we check if the pack isn't empty.*/
@@ -155,7 +162,7 @@ namespace CMP1903M_A01_2223
             }
 
         /*Function that deals multiple cards to a given hand*/
-        public List<Card> dealCard(int amount, myHand Hand){
+        public static List<Card> DealCard(int amount, myHand Hand){
 
             /*We avoid going over the amount left in the deck*/
             if (amount >= pack.Count){ amount = pack.Count; }   
