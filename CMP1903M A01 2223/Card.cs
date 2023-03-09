@@ -37,6 +37,7 @@ class Card{
     
     }
 
+    /*ADDITIONAL METHOD*/
     public string ChangeName(){
 
         string cardname;

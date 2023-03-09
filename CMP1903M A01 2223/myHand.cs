@@ -9,7 +9,7 @@ namespace CMP1903M_A01_2223{
 	using System;
 	using System.Collections.Generic;
 
-
+	/*ADDITIONAL CLASS*/
 	class myHand
 	{
 

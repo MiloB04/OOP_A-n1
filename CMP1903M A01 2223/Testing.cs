@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace CMP1903M_A01_2223{ 
 
+    /*TESTING CLASS*/
     class Testing {
         
         /*runTest is a method that lets us try out several functions of the Pack and Card class.*/
