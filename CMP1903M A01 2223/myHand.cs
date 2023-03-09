@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CMP1903M_A01_2223{
 
-	using System;
-	using System.Collections.Generic;
 
 	/*ADDITIONAL CLASS*/
 	class myHand
 	{
 
-		public List<Card> hand = new List<Card>();
+		private List<Card> hand = new List<Card>();
 		private string _typename;
 		private int _typecode;
 		private int _max;
@@ -26,24 +23,6 @@ namespace CMP1903M_A01_2223{
 				if (value > 0 && value< 3){ 
 
 					_typecode = value;
-				}
-			}
-		}
-
-		public int Max{
-
-			get { return _max; }
-			set
-			{
-				/*Checks that the value is within the predicted parameters*/
-				if (value < 1){ 
-
-					_max = 1;
-
-                }else{
-
-					_max = value;
-
 				}
 			}
 		}
